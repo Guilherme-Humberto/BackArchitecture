@@ -2,6 +2,7 @@ module.exports = class LoginRouter {
     constructor(authUseCase) {
         this.authUseCase = authUseCase
     }
+    
     route(httpRequest) {
         if(!httpRequest || !httpRequest.body) {
             return {
