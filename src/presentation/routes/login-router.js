@@ -1,4 +1,7 @@
 module.exports = class LoginRouter {
+    constructor(authUseCase) {
+        this.authUseCase = authUseCase
+    }
     route(httpRequest) {
         if(!httpRequest || !httpRequest.body) {
             return {
@@ -11,5 +14,6 @@ module.exports = class LoginRouter {
                 statusCode: 400
             }
         }
+        this.authUseCase.auth(email, password)
     }
 }
