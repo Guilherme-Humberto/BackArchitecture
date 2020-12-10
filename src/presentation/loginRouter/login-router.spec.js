@@ -60,5 +60,6 @@ describe('Login Router', () => {
         }
         sut.route(httpRequest)
         expect(authUseCase.email).toBe(httpRequest.body.email)
+        expect(authUseCase.password).toBe(httpRequest.body.password)
     })
 })
